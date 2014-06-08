@@ -4,4 +4,4 @@ all : MagicForest magic_forest Benchmark
 	ghc -O2 $<
 
 % : %.cpp
-	g++ -std=c++11 $< -o $@
+	g++ -O2 -std=c++11 $< -o $@
