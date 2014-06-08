@@ -1,6 +1,7 @@
 import Criterion
 import Criterion.Main
 import System.Process
+import Control.Monad (void)
 
 data Forest = Forest { lions, wolfs, goats :: Int }
             deriving (Show)
@@ -12,14 +13,14 @@ forestArgs :: Forest -> [String]
 forestArgs (Forest l w g) = [show l, show w, show g]
 
 js :: Forest -> IO ()
-js f = callProcess "js" args
+js f = void $ readProcess "js" args ""
   where args = "magicForest.js" : forestArgs f
 
 hs :: Forest -> IO ()
-hs f = callProcess "./MagicForest" (forestArgs f)
+hs f = void $ readProcess "./MagicForest" (forestArgs f) ""
 
 cpp :: Forest -> IO ()
-cpp f = callProcess "./magic-forest-cpp" (forestArgs f)
+cpp f = void $ readProcess "./magic-forest-cpp" (forestArgs f) ""
 
 forests :: [Forest]
 forests =
