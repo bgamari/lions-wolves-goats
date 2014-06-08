@@ -16,7 +16,7 @@ js f = callProcess "js" args
   where args = "magicForest.js" : forestArgs f
 
 hs :: Forest -> IO ()
-hs f = callProcess "./MagicForest2" (forestArgs f)
+hs f = callProcess "./MagicForest" (forestArgs f)
 
 cpp :: Forest -> IO ()
 cpp f = callProcess "./magic-forest-cpp" (forestArgs f)
