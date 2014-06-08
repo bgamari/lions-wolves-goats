@@ -25,7 +25,7 @@ cpp f = void $ readProcess "./magic_forest" (forestArgs f) ""
 forests :: [Forest]
 forests =
   [ Forest (6+n) (55+n) (17+n)
-    | n <- [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000]
+    | n <- [0, 100, 200, 300]
   ]
 
 benchmarksFor :: Forest -> Benchmark
