@@ -20,7 +20,7 @@ hs :: Forest -> IO ()
 hs f = void $ readProcess "./MagicForest" (forestArgs f) ""
 
 cpp :: Forest -> IO ()
-cpp f = void $ readProcess "./magic-forest-cpp" (forestArgs f) ""
+cpp f = void $ readProcess "./magic_forest" (forestArgs f) ""
 
 forests :: [Forest]
 forests =
